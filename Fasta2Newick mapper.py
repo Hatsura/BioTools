@@ -10,7 +10,7 @@
 # -- CONFIG--
 # This separator character will be used to separate description from specific name.
 # ie.: homeobox protein - Apis melifera
-# IMPORTANT NOTE: you can't use ','
+# IMPORTANT NOTE: you can't use any of these following characters: , ( ) ;
 sep = '@' 
 
 # -- END of CONFIG --
