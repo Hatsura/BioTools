@@ -1,16 +1,19 @@
 '''
 	'FASTA header into Newick' Mapper
-	release date: 17-jan-2018
+    Put the headers from a FASTA file into the respective newick file.
+    
+	Release date: 17-jan-2018
 	by Paulo 
 	GitHub: @Hatsura
 	
 	version: 1.1
-	last updated: 23-01-2018
+	last updated: 04-04-2018
 '''
 # -- CONFIG--
-# This separator character will be used to separate description from specific name.
-# ie.: homeobox protein - Apis melifera
-# IMPORTANT NOTE: you can't use any of these following characters: , ( ) ;
+# This is the separator character that will be used to separate the description from the specific name.
+# ie.: <description><sep><specific name>
+#     sep= ' - '   --results in-> homeobox protein - Apis melifera
+# IMPORTANT NOTE: you can't use any of these following characters: , ( ) ; :
 sep = '@' 
 
 # -- END of CONFIG --
@@ -19,7 +22,7 @@ sep = '@'
 sep = ' '+sep+' '
 
 #Foolproofing
-if sep in [',',':',';',')','(']:
+if sep in ', : ; ( )'.split(' '):
 	sep = ' '
 
 from tkinter import Tk,filedialog #Stuff for file open/saving. -- https://pythonspot.com/en/tk-file-dialogs/
